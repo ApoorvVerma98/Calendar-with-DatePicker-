@@ -15,12 +15,11 @@ body {
 h1 {
   margin-bottom: 20px;
   color: #333;
-  font-size: 60px;
+  font-size: 46px;
   background-image: linear-gradient(to right, #ff0000, #0000ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 
 .controls {
   margin-bottom: 20px;
