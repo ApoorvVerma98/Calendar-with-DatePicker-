@@ -1,13 +1,13 @@
 $(document).ready(function () {
-  // initialize d clndr
+  // initialize the clndr
   renderCalendar();
 
-  // hndle mnth nd yr selection chnge
+  // hndle mnths nd yrs selction chnge
   $('#month, #year').change(function () {
     renderCalendar();
   });
 
-  // hndle date inpt nd colr chnge
+  // hndle dte inpt nd colr chnge
   $('#dateInput').keypress(function (e) {
     if (e.keyCode === 13) {
       var inputDate = $(this).val();
@@ -18,7 +18,7 @@ $(document).ready(function () {
     }
   });
 
-  // hndle bn click for date input
+  // hndle btn click for date input
   $('#dateButton').click(function () {
     var inputDate = $('#dateInput').val();
     var cell = findCalendarCell(inputDate);
@@ -27,36 +27,34 @@ $(document).ready(function () {
     }
   });
 
-  // rnder the calndr basd on selctd mnth nd yr
+  // rnder the calndr basd on selctd mnths nd yrs
   function renderCalendar() {
     var month = parseInt($('#month').val());
     var year = parseInt($('#year').val());
-
     var daysInMonth = new Date(year, month, 0).getDate();
     var firstDayOfWeek = new Date(year, month - 1, 1).getDay();
-
     var calendar = $('#calendar');
     calendar.empty();
 
-    // add empty cells for prevs mnth's dys
+    // add empty cells for prevs mnths dys
     for (var i = 0; i < firstDayOfWeek; i++) {
       calendar.append('<div></div>');
     }
 
-    // add cells for crrnt mnth's dys
+    // add cells for crrnt mnths dys
     for (var day = 1; day <= daysInMonth; day++) {
       var cell = $('<div>' + day + '</div>');
       cell.data('day', day);
       calendar.append(cell);
     }
 
-    // attch click event to cells for colr chnge
+    // attch clck event to cells for colr chnge
     $('.calendar div').click(function () {
       toggleCellColor($(this));
     });
   }
 
-  // find the calndr cell with the specifd dte
+  // fnd the calndr cell with the specifd dte
   function findCalendarCell(date) {
     var day = parseInt(date);
     var cells = $('.calendar div');
