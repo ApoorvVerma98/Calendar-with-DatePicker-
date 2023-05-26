@@ -1,0 +1,78 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+#dateInput {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+#month {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+#year {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+#dateButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#dateButton:hover {
+  background-color: #db09ca;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  border: 0.5px solid #ccc;
+  padding: 5px;
+  box-shadow: 0 9px 9px rgba(0.3, 0.3, 0.3, 0.3);
+}
+
+.calendar div {
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.calendar div:hover {
+  background-color: #9b9797;
+}
+
+.calendar .green {
+  background-color: green;
+  color: white;
+}
