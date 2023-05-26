@@ -1,8 +1,8 @@
 $(document).ready(function () {
-  // initialize the clndr
+  // initilz the clndr
   renderCalendar();
 
-  // hndle mnths nd yrs selction chnge
+  // hndle mnths nd yrs selection chnge
   $('#month, #year').change(function () {
     renderCalendar();
   });
@@ -18,7 +18,7 @@ $(document).ready(function () {
     }
   });
 
-  // hndle btn click for date input
+  // hndle bttn clck fr dte inpt
   $('#dateButton').click(function () {
     var inputDate = $('#dateInput').val();
     var cell = findCalendarCell(inputDate);
@@ -27,7 +27,7 @@ $(document).ready(function () {
     }
   });
 
-  // rnder the calndr basd on selctd mnths nd yrs
+  // rndr the clndr bsd on selected mnths nd yrs
   function renderCalendar() {
     var month = parseInt($('#month').val());
     var year = parseInt($('#year').val());
@@ -36,7 +36,13 @@ $(document).ready(function () {
     var calendar = $('#calendar');
     calendar.empty();
 
-    // add empty cells for prevs mnths dys
+    // add the dys of the week
+    var daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
+    for (var i = 0; i < daysOfWeek.length; i++) {
+      calendar.append('<div class="dayOfWeek">' + daysOfWeek[i] + '</div>');
+    }
+
+    // add empty cells for prvs mnths dys
     for (var i = 0; i < firstDayOfWeek; i++) {
       calendar.append('<div></div>');
     }
@@ -48,13 +54,13 @@ $(document).ready(function () {
       calendar.append(cell);
     }
 
-    // attch clck event to cells for colr chnge
+    // attch clck evnt to cells for clr chnge
     $('.calendar div').click(function () {
       toggleCellColor($(this));
     });
   }
 
-  // fnd the calndr cell with the specifd dte
+  // fnd the clndr cell with the spcfd dte
   function findCalendarCell(date) {
     var day = parseInt(date);
     var cells = $('.calendar div');
@@ -67,7 +73,7 @@ $(document).ready(function () {
     return null;
   }
 
-  // toggle the colr of a calndr cell
+  // tggle the clr of a clndr cell
   function toggleCellColor(cell) {
     cell.toggleClass('green');
   }
